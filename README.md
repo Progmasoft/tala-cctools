@@ -6,10 +6,12 @@
 Tala CCTools are the assembler, the linker and the object file tools of TalaOS. They work on Mach-O alone and are
 shipped in the `tala-cctools` package of the core repository.
 
-Compatibility with Apple's cctools comes first: the commands take the options and write the output of their cctools
-counterparts, so scripts and build systems written for them work unchanged. Compatibility with GNU Binutils comes
-after it. Where Apple's tools stop, a tool may do more; `otool`, for example, also does the work of `readelf` and
+Compatibility with Apple's cctools is the base: the commands take the options and write the output of their cctools
+counterparts, so scripts and build systems written for them work unchanged. Compatibility with GNU Binutils is not a
+goal. Where Apple's tools stop, a tool may do more; `otool`, for example, also does the work of `readelf` and
 `objcopy`.
+
+The table names, for each GNU Binutils tool, the tool of Tala CCTools that does its work; their options are cctools'.
 
 | GNU Binutils | Tala CCTools |
 | --- | --- |
