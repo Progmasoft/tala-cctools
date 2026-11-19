@@ -1,0 +1,5 @@
+-std=gnu99
+-Icommon
+-Itests
+-Wall
+-Wextra
