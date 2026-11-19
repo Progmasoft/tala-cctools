@@ -397,7 +397,7 @@ PutOption(TalaCCTools_Options_tWriter*       aInOut_pWriter,
 static void
 PutFlags(TalaCCTools_Options_tWriter* aInOut_pWriter, const TalaCCTools_Options_tSpec* aIn_pSpec)
 {
-        const TalaCCTools_Options_tOption* pFlags[ 128 ];
+        const TalaCCTools_Options_tOption* pFlags[ 128 ] = { NULL };
         size_t count = SortedShort(aIn_pSpec, false, pFlags, sizeof(pFlags) / sizeof(pFlags[ 0 ]));
         if(count == 0)
         {
@@ -420,7 +420,7 @@ TalaCCTools_Options_WriteUsage(const TalaCCTools_Options_tSpec* aIn_pSpec, FILE*
         size_t                      start  = strlen("usage: ") + strlen(aIn_pSpec->pProgram);
         TalaCCTools_Options_tWriter writer = { aIn_pOutput, start, start + 1 };
         PutFlags(&writer, aIn_pSpec);
-        const TalaCCTools_Options_tOption* pValued[ 128 ];
+        const TalaCCTools_Options_tOption* pValued[ 128 ] = { NULL };
         size_t                             count
                 = SortedShort(aIn_pSpec, true, pValued, sizeof(pValued) / sizeof(pValued[ 0 ]));
         for(size_t i = 0; i < count; i++)
